@@ -4,6 +4,7 @@ import { MuiThemeProvider } from "@material-ui/core";
 import PrimarySearchAppBar from "./components/PrimarySearchAppBar";
 import HomeCollections from "./components/HomeCollections";
 import Container from "@material-ui/core/Container";
+import HomeEventList from "./components/HomeEventList";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <PrimarySearchAppBar />
       <Container maxWidth="lg">
         <HomeCollections />
+        <HomeEventList />
       </Container>
     </MuiThemeProvider>
   );
