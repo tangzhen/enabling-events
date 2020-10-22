@@ -1,8 +1,10 @@
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import React from "react";
-import HomeEventItem from "./HomeEventItem";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { HOST } from "../utils/config";
+import HomeEventItem, { EnablingEvent } from "./HomeEventItem";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -20,19 +22,26 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function HomeEventList() {
   const classes = useStyles();
+  const [events, setEvent] = useState<EnablingEvent[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const result = await axios(`${HOST}/api/events`);
+
+      setEvent(result.data);
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <>
       <Grid container spacing={3}>
-        <Grid item xs={4}>
-          <HomeEventItem />
-        </Grid>
-        <Grid item xs={4}>
-          <HomeEventItem />
-        </Grid>
-        <Grid item xs={4}>
-          <HomeEventItem />
-        </Grid>
+        {events.map((event) => (
+          <Grid item xs={4}>
+            <HomeEventItem event={event} />
+          </Grid>
+        ))}
       </Grid>
       <div className={classes.more}>
         <Button

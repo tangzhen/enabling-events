@@ -12,6 +12,20 @@ import ShareIcon from "@material-ui/icons/Share";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
+export interface EnablingEvent {
+  id: string;
+  title: string;
+  bg: string;
+  brief: string;
+  date: string;
+  location: string;
+  description: string;
+}
+
+interface HomeEventItemProp {
+  event: EnablingEvent;
+}
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     media: {
@@ -24,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function HomeEventItem() {
+export default function HomeEventItem({ event }: HomeEventItemProp) {
   const classes = useStyles();
 
   return (
