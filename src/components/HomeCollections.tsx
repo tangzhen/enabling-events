@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       backgroundPosition: "center",
-      backgroundImage: "url('http://localhost:3001/collection-1.jpg')",
+      backgroundImage: "url('/files/collection-1.jpg')",
     },
     content: {
       padding: theme.spacing(10),

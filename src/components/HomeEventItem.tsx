@@ -40,7 +40,7 @@ export default function HomeEventItem() {
       />
       <CardMedia
         className={classes.media}
-        image="http://localhost:3001/1.jpg"
+        image="http://localhost:3000/files/1.jpg"
         title="Paella dish"
       />
       <CardContent>
