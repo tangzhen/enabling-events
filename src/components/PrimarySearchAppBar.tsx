@@ -26,6 +26,12 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.background.paper,
       color: theme.palette.primary.main,
     },
+    toolBar: {
+      width: "100%",
+      maxWidth: "1280px",
+      marginLeft: "auto",
+      marginRight: "auto",
+    },
     title: {
       display: "none",
       [theme.breakpoints.up("sm")]: {
@@ -37,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) =>
       borderRadius: theme.shape.borderRadius,
       backgroundColor: fade(theme.palette.common.black, 0.05),
       "&:hover": {
-        backgroundColor: fade(theme.palette.common.black, 0.10),
+        backgroundColor: fade(theme.palette.common.black, 0.1),
       },
       color: fade(theme.palette.common.black, 0.5),
       marginRight: theme.spacing(2),
@@ -83,7 +89,7 @@ export default function PrimarySearchAppBar() {
 
   return (
     <AppBar position="static" className={classes.appBar}>
-      <Toolbar>
+      <Toolbar className={classes.toolBar}>
         <Typography className={classes.title} variant="h6" noWrap>
           Enabling Events
         </Typography>
