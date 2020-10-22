@@ -28,6 +28,9 @@ interface HomeEventItemProp {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    title: {
+      fontWeight: "bold",
+    },
     media: {
       height: 0,
       paddingTop: "56.25%", // 16:9
@@ -49,19 +52,21 @@ export default function HomeEventItem({ event }: HomeEventItemProp) {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={
+          <Typography variant="h6" className={classes.title}>
+            {event.title}
+          </Typography>
+        }
+        subheader={event.date}
       />
       <CardMedia
         className={classes.media}
-        image="http://localhost:3000/files/1.jpg"
-        title="Paella dish"
+        image={event.bg}
+        title={event.title}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+          {event.brief}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
