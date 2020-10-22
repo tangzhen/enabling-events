@@ -8,7 +8,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server db.json --static ./static --port 3001",
-    "serve": "npm run server && npm start"
+    "serve": "run-p server start"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -22,7 +22,9 @@
     "@testing-library/user-event": "^7.1.2",
     "connect-history-api-fallback": "^1.6.0",
     "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.6",
     "json-server": "^0.16.2",
+    "npm-run-all": "^4.1.5",
     "react-scripts": "3.4.4",
     "typescript": "^4.0.3"
   },
