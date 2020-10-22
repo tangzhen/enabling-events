@@ -5,8 +5,9 @@ import React from "react";
 import { Route, Router, Switch } from "react-router";
 import { AppTheme } from "./AppTheme";
 import PrimarySearchAppBar from "./components/PrimarySearchAppBar";
-import EventDetailPage from "./EventDetailPage";
-import HomePage from "./HomePage";
+import CreateEventPage from "./pages/CreateEventPage";
+import EventDetailPage from "./pages/EventDetailPage";
+import HomePage from "./pages/HomePage";
 
 const history = createBrowserHistory();
 
@@ -22,6 +23,9 @@ function App() {
             </Route>
             <Route exact path="/events/:id">
               <EventDetailPage />
+            </Route>
+            <Route exact path="/admin/create-event">
+              <CreateEventPage />
             </Route>
           </Switch>
         </Router>
