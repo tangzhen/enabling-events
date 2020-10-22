@@ -1,10 +1,11 @@
+import { MuiThemeProvider } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
 import React from "react";
 import { AppTheme } from "./AppTheme";
-import { MuiThemeProvider } from "@material-ui/core";
-import PrimarySearchAppBar from "./components/PrimarySearchAppBar";
 import HomeCollections from "./components/HomeCollections";
-import Container from "@material-ui/core/Container";
+import HomeEventCategory from "./components/HomeEventCategory";
 import HomeEventList from "./components/HomeEventList";
+import PrimarySearchAppBar from "./components/PrimarySearchAppBar";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <PrimarySearchAppBar />
       <Container maxWidth="lg">
         <HomeCollections />
+        <HomeEventCategory />
         <HomeEventList />
       </Container>
     </MuiThemeProvider>
