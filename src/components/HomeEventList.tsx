@@ -37,8 +37,8 @@ export default function HomeEventList() {
   return (
     <>
       <Grid container spacing={3}>
-        {events.map((event) => (
-          <Grid item xs={4}>
+        {events.map((event, idx) => (
+          <Grid item xs={4} key={idx}>
             <HomeEventItem event={event} />
           </Grid>
         ))}
