@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeCollections should render component correct 1`] = `
+<div>
+  <div
+    class="MuiPaper-root makeStyles-container-1 MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <div
+      class="MuiGrid-root makeStyles-mask-3 MuiGrid-container"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+      >
+        <div
+          class="makeStyles-content-2"
+        >
+          <h3
+            class="MuiTypography-root MuiTypography-h3 MuiTypography-gutterBottom"
+          >
+            Enabling Events
+          </h3>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa vitae tortor condimentum.
+          </p>
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-sendButton-4"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              BROWSE EVENTS
+              <span
+                class="MuiButton-endIcon MuiButton-iconSizeMedium"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+                  />
+                </svg>
+              </span>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
