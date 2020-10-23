@@ -15,6 +15,6 @@ server.get("/", function (req, res) {
 server.use(middlewares);
 server.use(router);
 
-server.listen(3000, () => {
-  console.log("Server is running on: ", 3000);
+server.listen(80, () => {
+  console.log("Server is running on: ", 80);
 });
