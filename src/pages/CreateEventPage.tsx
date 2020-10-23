@@ -8,6 +8,7 @@ import StepLabel from "@material-ui/core/StepLabel";
 import CreateEventForm from "../components/CreateEventForm";
 import TicketForm from "../components/TicketForm";
 import PublishEventForm from "../components/PublishEventForm";
+import { EnablingEvent } from "../components/HomeEventItem";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -99,7 +100,7 @@ export default function CreateEventPage() {
       </Stepper>
       {activeStep === 0 && <CreateEventForm />}
       {activeStep === 1 && <TicketForm />}
-      {activeStep === 2 && <PublishEventForm />}
+      {activeStep === 2 && <PublishEventForm event={{} as EnablingEvent} />}
       <div className={classes.buttonGroup}>
         <Button
           disabled={activeStep === 0}
