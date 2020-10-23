@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeEventCategory should render component correct 1`] = `
+<div>
+  <div
+    class="makeStyles-root-1"
+  >
+    <h5
+      class="MuiTypography-root makeStyles-title-2 MuiTypography-h5 MuiTypography-colorPrimary"
+    >
+      Popular Events
+    </h5>
+    <div
+      class="MuiTabs-root"
+    >
+      <div
+        class="MuiTabs-scroller MuiTabs-fixed"
+        style="overflow: hidden;"
+      >
+        <div
+          aria-label="disabled tabs example"
+          class="MuiTabs-flexContainer"
+          role="tablist"
+        >
+          <button
+            aria-selected="false"
+            class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth"
+            role="tab"
+            tabindex="-1"
+            type="button"
+          >
+            <span
+              class="MuiTab-wrapper"
+            >
+              ALL
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-selected="false"
+            class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth"
+            role="tab"
+            tabindex="-1"
+            type="button"
+          >
+            <span
+              class="MuiTab-wrapper"
+            >
+              FOR YOU
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-selected="true"
+            class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected MuiTab-fullWidth"
+            role="tab"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiTab-wrapper"
+            >
+              TODAY
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-selected="false"
+            class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth"
+            role="tab"
+            tabindex="-1"
+            type="button"
+          >
+            <span
+              class="MuiTab-wrapper"
+            >
+              THIS WEEKEND
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-selected="false"
+            class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth"
+            role="tab"
+            tabindex="-1"
+            type="button"
+          >
+            <span
+              class="MuiTab-wrapper"
+            >
+              FREE
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-selected="false"
+            class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth"
+            role="tab"
+            tabindex="-1"
+            type="button"
+          >
+            <span
+              class="MuiTab-wrapper"
+            >
+              FOOD & DRINK
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-selected="false"
+            class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth"
+            role="tab"
+            tabindex="-1"
+            type="button"
+          >
+            <span
+              class="MuiTab-wrapper"
+            >
+              ENTERTAINMENT
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+        <span
+          class="PrivateTabIndicator-root-3 PrivateTabIndicator-colorPrimary-4 MuiTabs-indicator"
+          style="left: 0px; width: 0px;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

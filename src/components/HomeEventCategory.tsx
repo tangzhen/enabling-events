@@ -1,8 +1,8 @@
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
-import React from "react";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import React from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
