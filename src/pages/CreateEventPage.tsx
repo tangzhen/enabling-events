@@ -15,10 +15,16 @@ const useStyles = makeStyles((theme: Theme) =>
       width: "100%",
       paddingTop: theme.spacing(4),
     },
+    buttonGroup: {
+      width: "100%",
+      display: "flex",
+      justifyContent: "center",
+      paddingBottom: "30px",
+    },
     button: {
       marginRight: theme.spacing(1),
+      width: "150px",
     },
-    formContent: {},
   })
 );
 
@@ -91,12 +97,10 @@ export default function CreateEventPage() {
           );
         })}
       </Stepper>
-      <div className={classes.formContent}>
-        {activeStep === 0 && <CreateEventForm />}
-        {activeStep === 1 && <TicketForm />}
-        {activeStep === 2 && <PublishEventForm />}
-      </div>
-      <div>
+      {activeStep === 0 && <CreateEventForm />}
+      {activeStep === 1 && <TicketForm />}
+      {activeStep === 2 && <PublishEventForm />}
+      <div className={classes.buttonGroup}>
         <Button
           disabled={activeStep === 0}
           onClick={handleBack}
