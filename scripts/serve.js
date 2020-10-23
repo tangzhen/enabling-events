@@ -6,7 +6,7 @@ const middlewares = jsonServer.defaults();
 const express = require("express");
 
 server.use(express.static(path.join(__dirname, "../build")));
-server.use("/files", express.static(path.join(__dirname, "../files")));
+server.use("/files", express.static(path.join(__dirname, "../static/files")));
 
 server.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "../build", "index.html"));
