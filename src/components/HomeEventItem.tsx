@@ -20,6 +20,7 @@ export interface EnablingEvent {
   bg: string;
   brief: string;
   date: string;
+  org: string;
   location: string;
   description: string;
 }

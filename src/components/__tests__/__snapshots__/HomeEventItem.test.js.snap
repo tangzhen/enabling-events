@@ -14,7 +14,7 @@ exports[`HomeEventItem should render component correct 1`] = `
         <h6
           class="MuiTypography-root makeStyles-title-1 MuiTypography-h6"
         >
-          Casual Run 2020
+          Pancake With Sliced Strawberry
         </h6>
         <span
           class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
@@ -54,14 +54,14 @@ exports[`HomeEventItem should render component correct 1`] = `
     <a
       aria-disabled="false"
       class="MuiButtonBase-root makeStyles-cardAction-4"
-      href="/events/2"
+      href="/events/1"
       role="button"
       tabindex="0"
     >
       <div
         class="MuiCardMedia-root makeStyles-media-2"
-        style="background-image: url(/files/2.jpg);"
-        title="Casual Run 2020"
+        style="background-image: url(/files/1.jpg);"
+        title="Pancake With Sliced Strawberry"
       />
       <div
         class="MuiCardContent-root"
@@ -69,7 +69,7 @@ exports[`HomeEventItem should render component correct 1`] = `
         <p
           class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
         >
-          A casual run organised by Standard Chartered to create awarenes arounfd inclusivity. Join us for specially crafted routes to ensure people of all ages and abilities can enjoy.
+          A pancake (or hotcake, griddlecake, or flapjack) is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter.
         </p>
       </div>
       <span
