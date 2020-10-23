@@ -17,6 +17,15 @@
       "date": "20190228",
       "location": "Entrance of National Gallery",
       "description": "A casual run organised by Standard Chartered to create awarenes arounfd inclusivity. Join us for specially crafted routes to ensure people of all ages and abilities can enjoy."
+    },
+    {
+      "id": 3,
+      "title": "Museum Visit: Portraits",
+      "bg": "/files/3.jpg",
+      "brief": "Singapore Arts Museum is having a temporary collection of portraits showcasing local heroes and their stories on how they played a part in shaping SIngapore today.",
+      "date": "20190228",
+      "location": "Entrance of National Gallery",
+      "description": "Singapore Arts Museum is having a temporary collection of portraits showcasing local heroes and their stories on how they played a part in shaping SIngapore today."
     }
   ],
   "profile": { "name": "Tan Pin Pin" }
