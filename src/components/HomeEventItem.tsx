@@ -11,6 +11,8 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { ButtonBase } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 export interface EnablingEvent {
   id: string;
@@ -38,6 +40,10 @@ const useStyles = makeStyles((theme: Theme) =>
     expand: {
       marginLeft: "auto",
     },
+    cardAction: {
+      display: "block",
+      textAlign: "initial",
+    },
   })
 );
 
@@ -59,16 +65,22 @@ export default function HomeEventItem({ event }: HomeEventItemProp) {
         }
         subheader={event.date}
       />
-      <CardMedia
-        className={classes.media}
-        image={event.bg}
-        title={event.title}
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {event.brief}
-        </Typography>
-      </CardContent>
+      <ButtonBase
+        component={Link}
+        to={`/events/${event.id}`}
+        className={classes.cardAction}
+      >
+        <CardMedia
+          className={classes.media}
+          image={event.bg}
+          title={event.title}
+        />
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {event.brief}
+          </Typography>
+        </CardContent>
+      </ButtonBase>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
