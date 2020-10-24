@@ -72,7 +72,7 @@ export default function EventDetailHeader({ event }: EventDetailHeaderProps) {
 
   const buyTicket = () => {
     const { id, ...eventData } = event;
-    axios.post(`${HOST}/my-events`, eventData).then(() => {
+    axios.post(`${HOST}/api/my-events`, eventData).then(() => {
       setShowMessage(true);
     });
   };
