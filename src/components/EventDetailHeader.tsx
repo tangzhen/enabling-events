@@ -51,6 +51,15 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingLeft: theme.spacing(2),
       paddingRight: theme.spacing(2),
     },
+    ticket: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "flex-end",
+    },
+    buyButton: {
+      width: "300px",
+      marginLeft: theme.spacing(3),
+    },
   })
 );
 
@@ -66,7 +75,9 @@ export default function EventDetailHeader({ event }: EventDetailHeaderProps) {
               <img src={event.bg} alt={event.title} className={classes.bg} />
             </Grid>
             <Grid item xs={4} className={classes.description}>
-              <Typography>{moment(event.startDate).format("D MMM yyyy")}</Typography>
+              <Typography>
+                {moment(event.startDate).format("D MMM yyyy")}
+              </Typography>
               <div className={classes.organization}>
                 <Typography variant="h6" className={classes.title}>
                   {event.title}
@@ -85,14 +96,26 @@ export default function EventDetailHeader({ event }: EventDetailHeaderProps) {
           </Grid>
         </div>
 
-        <div className={classes.footer}>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
-        </div>
+        <Grid container className={classes.footer}>
+          <Grid item xs={6}>
+            <IconButton aria-label="add to favorites">
+              <FavoriteIcon />
+            </IconButton>
+            <IconButton aria-label="share">
+              <ShareIcon />
+            </IconButton>
+          </Grid>
+          <Grid item xs={6} className={classes.ticket}>
+            <Typography>54 SLOTS LEFT</Typography>
+            <Button
+              variant="outlined"
+              color="primary"
+              className={classes.buyButton}
+            >
+              BUY TICKET
+            </Button>
+          </Grid>
+        </Grid>
       </Paper>
     </>
   );
