@@ -10,7 +10,7 @@ describe("HomeEventItem", () => {
       bg: "/files/1.jpg",
       summary:
         "A pancake (or hotcake, griddlecake, or flapjack) is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter.",
-      startDate: "20190228",
+      startDate: "2020-10-24T08:52:10+08:00",
       organizer: "Standard Chartered",
       location: "Entrance of National Gallery",
     };

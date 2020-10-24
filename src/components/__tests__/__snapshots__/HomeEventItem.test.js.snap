@@ -19,7 +19,7 @@ exports[`HomeEventItem should render component correct 1`] = `
         <span
           class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
         >
-          February 28, 2019
+          October 24, 2020
         </span>
       </div>
       <div
