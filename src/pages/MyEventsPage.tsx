@@ -20,8 +20,8 @@ export default function MyEventsPage() {
   }, []);
 
   return (
-    <>
+    <div style={{ paddingTop: 16 }}>
       <HomeEventList events={events} />
-    </>
+    </div>
   );
 }
