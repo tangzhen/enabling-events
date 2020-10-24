@@ -11,6 +11,7 @@ import EventDetailPage from "./pages/EventDetailPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import CreateEventSuccessPage from "./pages/CreateEventSuccess";
+import MyEventsPage from "./pages/MyEventsPage";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
               </Route>
               <Route exact path="/events">
                 <HomePage />
+              </Route>
+              <Route exact path="/my-events">
+                <MyEventsPage />
               </Route>
               <Route exact path="/events/:id">
                 <EventDetailPage />

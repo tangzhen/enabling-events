@@ -1,24 +1,23 @@
-import React from "react";
-import {
-  fade,
-  makeStyles,
-  Theme,
-  createStyles,
-} from "@material-ui/core/styles";
+import { ButtonBase } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
-import SearchIcon from "@material-ui/icons/Search";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import InputBase from "@material-ui/core/InputBase";
+import {
+  createStyles, fade,
+  makeStyles,
+  Theme
+} from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import Button from "@material-ui/core/Button";
+import SearchIcon from "@material-ui/icons/Search";
+import React from "react";
+import { Link as RouterLink, useHistory } from "react-router-dom";
 import { Auth } from "../utils/auth";
-import { ButtonBase } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -118,7 +117,11 @@ export default function PrimarySearchAppBar() {
         </div>
         <div className={classes.grow} />
         <div className={classes.sectionDesktop}>
-          {!Auth.isAdmin && <Button color="primary">MY EVENTS</Button>}
+          {!Auth.isAdmin && (
+            <Button color="primary" component={RouterLink} to="/my-events">
+              MY EVENTS
+            </Button>
+          )}
           <Button color="primary">TICKETS</Button>
           <IconButton aria-label="show 4 new mails" color="inherit">
             <Badge badgeContent={4} color="secondary">
