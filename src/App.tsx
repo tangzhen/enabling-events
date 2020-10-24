@@ -16,9 +16,9 @@ function App() {
   return (
     <MuiThemeProvider theme={AppTheme}>
       <MuiPickersUtilsProvider utils={MomentUtils}>
-        <PrimarySearchAppBar />
-        <Container maxWidth="lg">
-          <BrowserRouter>
+        <BrowserRouter>
+          <PrimarySearchAppBar />
+          <Container maxWidth="lg">
             <Switch>
               <Route exact path="/login">
                 <LoginPage />
@@ -39,8 +39,8 @@ function App() {
                 <Redirect to="/login" />
               </Route>
             </Switch>
-          </BrowserRouter>
-        </Container>
+          </Container>
+        </BrowserRouter>
       </MuiPickersUtilsProvider>
     </MuiThemeProvider>
   );

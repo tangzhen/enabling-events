@@ -16,6 +16,9 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import Button from "@material-ui/core/Button";
+import { Auth } from "../utils/auth";
+import { ButtonBase } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -86,13 +89,20 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
+  const history = useHistory();
 
   return (
     <AppBar position="static" className={classes.appBar}>
       <Toolbar className={classes.toolBar}>
-        <Typography className={classes.title} variant="h6" noWrap>
-          Enabling Events
-        </Typography>
+        <ButtonBase
+          onClick={() => {
+            history.push({ pathname: "/" });
+          }}
+        >
+          <Typography className={classes.title} variant="h6" noWrap>
+            Enabling Events
+          </Typography>
+        </ButtonBase>
         <div className={classes.search}>
           <div className={classes.searchIcon}>
             <SearchIcon />
@@ -108,7 +118,7 @@ export default function PrimarySearchAppBar() {
         </div>
         <div className={classes.grow} />
         <div className={classes.sectionDesktop}>
-          <Button color="primary">CREATE EVENT</Button>
+          {!Auth.isAdmin && <Button color="primary">MY EVENTS</Button>}
           <Button color="primary">TICKETS</Button>
           <IconButton aria-label="show 4 new mails" color="inherit">
             <Badge badgeContent={4} color="secondary">

@@ -4,6 +4,6 @@ import App from '../App.tsx';
 
 test('renders header create event button', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/CREATE EVENT/i);
+  const linkElement = getByText(/TICKETS/i);
   expect(linkElement).toBeInTheDocument();
 });
