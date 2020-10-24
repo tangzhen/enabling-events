@@ -55,9 +55,12 @@ export default function EventDetailContent({ event }: EventDetailContentProps) {
       <Grid item xs={4} className={classes.extraInfo}>
         <Typography className={classes.bold}>Date and Time</Typography>
         <Typography>
-          {moment(event.startDate).format("ddd, MMMM D, YYYY")}
+          {moment(event.startDate).format("ddd, MMMM D, YYYY, h.mm A")}
         </Typography>
-        <Typography>3.00 PM - 6.00 PM</Typography>
+        <Typography>to</Typography>
+        <Typography>
+          {moment(event.endDate).format("ddd, MMMM D, YYYY, h.mm A")}
+        </Typography>
         <Button color="primary">Add to Calendar</Button>
 
         <Typography className={clsx(classes.bold, classes.sectionPadding)}>

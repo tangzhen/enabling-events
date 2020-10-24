@@ -24,7 +24,7 @@ exports[`HomeEventCategory should render component correct 1`] = `
           <p
             class="MuiTypography-root MuiTypography-body1"
           >
-            20190228
+            28 Feb 2019
           </p>
           <div
             class="makeStyles-organization-3"

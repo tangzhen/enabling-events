@@ -68,12 +68,17 @@ exports[`EventDetailContent should render component correct 1`] = `
       <p
         class="MuiTypography-root MuiTypography-body1"
       >
-        Thu, February 28, 2019
+        Thu, February 28, 2019, 12.00 AM
       </p>
       <p
         class="MuiTypography-root MuiTypography-body1"
       >
-        3.00 PM - 6.00 PM
+        to
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1"
+      >
+        Sat, October 24, 2020, 10.37 AM
       </p>
       <button
         class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"

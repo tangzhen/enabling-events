@@ -6,6 +6,7 @@ import Paper from "@material-ui/core/Paper";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
+import moment from "moment";
 import React from "react";
 import EnablingEvent from "../model/EnablingEvent";
 
@@ -65,7 +66,7 @@ export default function EventDetailHeader({ event }: EventDetailHeaderProps) {
               <img src={event.bg} alt={event.title} className={classes.bg} />
             </Grid>
             <Grid item xs={4} className={classes.description}>
-              <Typography>{event.startDate}</Typography>
+              <Typography>{moment(event.startDate).format("D MMM yyyy")}</Typography>
               <div className={classes.organization}>
                 <Typography variant="h6" className={classes.title}>
                   {event.title}

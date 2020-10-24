@@ -14,6 +14,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { ButtonBase } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import EnablingEvent from "../model/EnablingEvent";
+import moment from "moment";
 
 interface HomeEventItemProp {
   event: EnablingEvent;
@@ -61,7 +62,7 @@ export default function HomeEventItem({ event }: HomeEventItemProp) {
             {event.title}
           </Typography>
         }
-        subheader={event.startDate}
+        subheader={moment(event.startDate).format("MMMM D, yyyy")}
       />
       <ButtonBase
         component={Link}
