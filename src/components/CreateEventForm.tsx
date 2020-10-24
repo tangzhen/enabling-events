@@ -7,12 +7,12 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import React, { useState } from "react";
+import React from "react";
 import FormSectionTitle from "./FormSectionTitle";
 import FormSelection from "./FormSelection";
-import moment from "moment";
 import { KeyboardDateTimePicker } from "@material-ui/pickers";
-import { MaterialUiPickersDate } from "@material-ui/pickers/typings/date";
+import { EnablingEvent } from "./HomeEventItem";
+import useCreateEventForm from "./hooks/useCreateEventFrom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,60 +30,32 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function CreateEventForm() {
+interface CreateEventFormProps {
+  event: EnablingEvent;
+  onValueChange: (key: string, path: string) => void;
+}
+
+export default function CreateEventForm({
+  event,
+  onValueChange,
+}: CreateEventFormProps) {
   const classes = useStyles();
-  const [organizer, setOrganizer] = useState<number | string>("");
-  const [locationType, setLocationType] = useState<string>("venue");
-  const [startDate, setStartDate] = useState<MaterialUiPickersDate>(moment());
-  const [endDate, setEndDate] = useState<MaterialUiPickersDate>(
-    moment().add(3, "h")
-  );
-  const organizerOptions = [
-    {
-      label: "A",
-      value: 1,
-    },
-    {
-      label: "B",
-      value: 2,
-    },
-    {
-      label: "C",
-      value: 3,
-    },
-  ];
 
-  const [type, setType] = useState<number | string>("");
-  const typeOptions = [
-    {
-      label: "A",
-      value: 1,
-    },
-    {
-      label: "B",
-      value: 2,
-    },
-    {
-      label: "C",
-      value: 3,
-    },
-  ];
-
-  const [category, setCategory] = useState<number | string>("");
-  const categoryOptions = [
-    {
-      label: "A",
-      value: 1,
-    },
-    {
-      label: "B",
-      value: 2,
-    },
-    {
-      label: "C",
-      value: 3,
-    },
-  ];
+  const {
+    organizer,
+    type,
+    category,
+    locationType,
+    startDate,
+    endDate,
+    formOptions,
+    setOrganizer,
+    setCategory,
+    setLocationType,
+    setType,
+    setStartDate,
+    setEndDate,
+  } = useCreateEventForm();
 
   return (
     <form noValidate autoComplete="off" className={classes.root}>
@@ -97,6 +69,8 @@ export default function CreateEventForm() {
           label="Event Title"
           variant="outlined"
           fullWidth
+          value={event.title}
+          onChange={(event) => onValueChange("title", event.target.value)}
         />
         <TextField
           id="event-summary"
@@ -105,10 +79,12 @@ export default function CreateEventForm() {
           fullWidth
           multiline
           rows={6}
+          value={event.brief}
+          onChange={(event) => onValueChange("brief", event.target.value)}
         />
         <FormSelection
           label="Organizer"
-          options={organizerOptions}
+          options={formOptions.organizer}
           initValue={organizer}
           onChange={setOrganizer}
         />
@@ -116,7 +92,7 @@ export default function CreateEventForm() {
           <Grid item xs={6}>
             <FormSelection
               label="Type"
-              options={typeOptions}
+              options={formOptions.type}
               initValue={type}
               onChange={setType}
             />
@@ -124,7 +100,7 @@ export default function CreateEventForm() {
           <Grid item xs={6}>
             <FormSelection
               label="Category"
-              options={categoryOptions}
+              options={formOptions.category}
               initValue={category}
               onChange={setCategory}
             />
@@ -162,6 +138,8 @@ export default function CreateEventForm() {
             label="Venue Location"
             variant="outlined"
             fullWidth
+            value={event.location}
+            onChange={(event) => onValueChange("location", event.target.value)}
           />
         )}
       </Container>
