@@ -9,6 +9,7 @@ describe("EventDetailContent", () => {
       title: "Pancake With Sliced Strawberry",
       bg: "/files/1.jpg",
       startDate: "2020-10-24T08:52:10+08:00",
+      endDate: "2020-10-24T08:52:10+08:00",
       organizer: "Standard Chartered",
       location: "Entrance of National Gallery",
       summary:
