@@ -4,32 +4,78 @@
       "id": 1,
       "title": "Pancake With Sliced Strawberry",
       "bg": "/files/1.jpg",
-      "brief": "A pancake (or hotcake, griddlecake, or flapjack) is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter.",
-      "date": "20190228",
-      "org": "Standard Chartered",
+      "startDate": "2020-10-24T08:52:10+08:00",
+      "endDate": "2020-10-26T08:52:10+08:00",
+      "organizer": "Standard Chartered",
       "location": "Entrance of National Gallery",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa vitae tortor condimentum."
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa vitae tortor condimentum."
     },
     {
       "id": 2,
       "title": "Casual Run 2020",
       "bg": "/files/2.jpg",
-      "brief": "A casual run organised by Standard Chartered to create awarenes arounfd inclusivity. Join us for specially crafted routes to ensure people of all abilities can enjoy.",
-      "date": "20190228",
-      "org": "Standard Chartered",
+      "startDate": "2020-10-24T08:52:10+08:00",
+      "endDate": "2020-10-26T08:52:10+08:00",
+      "organizer": "Standard Chartered",
       "location": "Entrance of National Gallery",
-      "description": "A casual run organised by Standard Chartered to create awarenes arounfd inclusivity. Join us for specially crafted routes to ensure people of all ages and abilities can enjoy."
+      "summary": "A casual run organised by Standard Chartered to create awarenes arounfd inclusivity. Join us for specially crafted routes to ensure people of all ages and abilities can enjoy."
     },
     {
       "id": 3,
       "title": "Museum Visit: Portraits",
       "bg": "/files/3.jpg",
-      "brief": "Singapore Arts Museum is having a temporary collection of portraits showcasing local heroes and their stories on how they played a part in shaping SIngapore today.",
-      "date": "20190228",
-      "org": "Standard Chartered",
+      "startDate": "2020-10-24T08:52:10+08:00",
+      "endDate": "2020-10-26T08:52:10+08:00",
+      "organizer": "Standard Chartered",
       "location": "Entrance of National Gallery",
-      "description": "Singapore Arts Museum is having a temporary collection of portraits showcasing local heroes and their stories on how they played a part in shaping SIngapore today."
+      "summary": "Singapore Arts Museum is having a temporary collection of portraits showcasing local heroes and their stories on how they played a part in shaping SIngapore today."
+    },
+    {
+      "id": 4,
+      "title": "Kuif berwobin ne ek",
+      "bg": "/files/2.jpg",
+      "startDate": "2020-10-24T08:52:10+08:00",
+      "endDate": "2020-10-26T08:52:10+08:00",
+      "organizer": "Standard Chartered",
+      "location": "Entrance of National Gallery",
+      "summary": "Singapore Arts Museum is having a temporary collection of portraits showcasing local heroes and their stories on how they played a part in shaping SIngapore today."
+    },
+    {
+      "id": 5,
+      "title": "Wu zipapul mobe bossukdif",
+      "bg": "/files/1.jpg",
+      "startDate": "2020-10-24T08:52:10+08:00",
+      "endDate": "2020-10-26T08:52:10+08:00",
+      "organizer": "Standard Chartered",
+      "location": "Entrance of National Gallery",
+      "summary": "Vewero re ruid nommupu ajupanomi uri dec eruici ugeba oh adtib sidhezi peoh wi wo uku win. Naj lu ojobojvap kekpodbun loj im vihbidze izgar ufabipsof tormu ojoaz lo gackaotu on ot lere dekragum. Fi uzgi ramug nerwid sav fi dumugza jafnivbes lalpil cavol is so rojab."
+    },
+    {
+      "id": 6,
+      "title": "Cuh wog mabo akokezo",
+      "bg": "/files/3.jpg",
+      "startDate": "2020-10-24T08:52:10+08:00",
+      "endDate": "2020-10-26T08:52:10+08:00",
+      "organizer": "Standard Chartered",
+      "location": "Entrance of National Gallery",
+      "summary": "Av wifva odo wuf itetimot owuroov be kuccirasu huvid obra ewte okidwut viluw laj cugunup gokodu. Satukor dozfe ipihop ga mudsika agigodu newozmo biko cali naus ti saijwu je bosdeet hofdameh zicmo. Omnu no inpukug wiicuihe resovi rakum luir va ucpecu idcouh cibtak edakacu bewfugeze fu gibov. Gok ovejiv kicirso ifasi feneuc loose dioni gi awabaw jikob gijeb wa irjuno jup mohkerit haj mi bov. Ufa disana saf is vefven cuspinzev ranor pi huv lijet ovim rugmiski nawitso oje. Ron op wekwaf dib he fi ij ze ih hawo kew foama zaselkej hipip os ih ihu roorewup."
     }
   ],
-  "profile": { "name": "Tan Pin Pin" }
+  "profile": [
+    {
+      "name": "Tan Pin Pin",
+      "id": 1,
+      "role": "admin"
+    },
+    {
+      "name": "Han Mei Mei",
+      "id": 2,
+      "role": "pwd"
+    },
+    {
+      "title": "Event Title",
+      "breif": "Event Summary",
+      "id": 3
+    }
+  ]
 }
