@@ -35,6 +35,13 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "block",
       textAlign: "initial",
     },
+    content: {
+      textOverflow: "ellipsis",
+      display: "box",
+      boxOrient: "vertical",
+      lineClamp: 3,
+      overflow: "hidden",
+    },
   })
 );
 
@@ -67,7 +74,12 @@ export default function HomeEventItem({ event }: HomeEventItemProp) {
           title={event.title}
         />
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+            className={classes.content}
+          >
             {event.summary}
           </Typography>
         </CardContent>
