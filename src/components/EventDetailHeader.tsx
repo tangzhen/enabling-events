@@ -3,12 +3,15 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import Paper from "@material-ui/core/Paper";
+import Snackbar from "@material-ui/core/Snackbar";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
+import axios from "axios";
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 import EnablingEvent from "../model/EnablingEvent";
+import { HOST } from "../utils/config";
 
 interface EventDetailHeaderProps {
   event: EnablingEvent;
@@ -65,6 +68,14 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function EventDetailHeader({ event }: EventDetailHeaderProps) {
   const classes = useStyles();
+  const [showMessage, setShowMessage] = useState(false);
+
+  const buyTicket = () => {
+    const { id, ...eventData } = event;
+    axios.post(`${HOST}/my-events`, eventData).then(() => {
+      setShowMessage(true);
+    });
+  };
 
   return (
     <>
@@ -111,12 +122,20 @@ export default function EventDetailHeader({ event }: EventDetailHeaderProps) {
               variant="outlined"
               color="primary"
               className={classes.buyButton}
+              onClick={buyTicket}
             >
               BUY TICKET
             </Button>
           </Grid>
         </Grid>
       </Paper>
+      <Snackbar
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        open={showMessage}
+        onClose={() => setShowMessage(false)}
+        message="Buy ticket success, view them in my events page."
+        key={"buy-ticket"}
+      />
     </>
   );
 }
