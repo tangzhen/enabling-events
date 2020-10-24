@@ -3,12 +3,13 @@ import Container from "@material-ui/core/Container";
 import MomentUtils from "@date-io/moment";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { AppTheme } from "./AppTheme";
 import PrimarySearchAppBar from "./components/PrimarySearchAppBar";
 import CreateEventPage from "./pages/CreateEventPage";
 import EventDetailPage from "./pages/EventDetailPage";
 import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -18,7 +19,10 @@ function App() {
         <Container maxWidth="lg">
           <BrowserRouter>
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/login">
+                <LoginPage />
+              </Route>
+              <Route exact path="/events">
                 <HomePage />
               </Route>
               <Route exact path="/events/:id">
@@ -26,6 +30,9 @@ function App() {
               </Route>
               <Route exact path="/admin/create-event">
                 <CreateEventPage />
+              </Route>
+              <Route path="*">
+                <Redirect to="/login" />
               </Route>
             </Switch>
           </BrowserRouter>
