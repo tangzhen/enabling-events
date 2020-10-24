@@ -27,7 +27,7 @@ export default function HomeEventList() {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await axios(`${HOST}/api/events`);
+      const result = await axios(`${HOST}/api/events?_sort=id&_order=desc&_limit=9`);
 
       setEvent(result.data);
     }
