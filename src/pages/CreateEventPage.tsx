@@ -12,6 +12,7 @@ import PublishEventForm from "../components/PublishEventForm";
 import TicketForm from "../components/TicketForm";
 import { HOST } from "../utils/config";
 import EnablingEvent from "../model/EnablingEvent";
+import moment from "moment";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -39,14 +40,14 @@ function getSteps() {
 const INIT_EVENT = {
   id: "",
   title: "",
-  bg: "",
+  bg: `/files/${_.random(1, 19)}.jpg`,
   summary: "",
-  startDate: "",
-  endDate: "",
+  startDate: moment().format(),
+  endDate: moment().add(1, "day").format(),
   location: "",
   organizer: "",
-  publishDate: "",
-  privacy: "",
+  publishDate: moment().format(),
+  privacy: "public",
 };
 
 export default function CreateEventPage() {

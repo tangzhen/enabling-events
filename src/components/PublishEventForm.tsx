@@ -19,11 +19,14 @@ const useStyles = makeStyles((theme: Theme) =>
     section: {
       paddingBottom: theme.spacing(4),
     },
+    description: {
+      padding: theme.spacing(4),
+    },
     formControl: {
       margin: theme.spacing(1),
     },
     bg: {
-      height: "400px",
+      width: "600px",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       backgroundPosition: "center",
@@ -54,14 +57,12 @@ export default function PublishEventForm({ event, onValueChange }: PublishEventF
           <Grid item xs={8}>
             <img src={event.bg} alt={event.title} className={classes.bg} />
           </Grid>
-          <Grid item xs={4}>
-            <Typography>{event.startDate}</Typography>
-            <div>
-              <Typography variant="h6">
+          <Grid item xs={4} className={classes.description}>
+          <Typography variant="h6">
                 {event.title}
               </Typography>
-              <Typography>by {event.organizer}</Typography>
-            </div>
+            <Typography>{moment(event.startDate).format("dddd, D MMMM yyyy [at] h:mm A")}</Typography>  
+            <Typography>{event.organizer}</Typography>
             <Button color="primary">PREVIEW</Button>
           </Grid>
         </Grid>

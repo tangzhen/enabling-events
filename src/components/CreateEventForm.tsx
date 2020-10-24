@@ -80,7 +80,7 @@ export default function CreateEventForm({
           multiline
           rows={6}
           value={event.summary}
-          onChange={(event) => onValueChange("brief", event.target.value)}
+          onChange={(event) => onValueChange("summary", event.target.value)}
         />
         <FormSelection
           label="Organizer"
