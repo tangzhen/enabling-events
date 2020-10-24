@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form related module should return the category options 1`] = `
+Array [
+  Object {
+    "label": "A",
+    "value": 1,
+  },
+  Object {
+    "label": "B",
+    "value": 2,
+  },
+  Object {
+    "label": "C",
+    "value": 3,
+  },
+]
+`;
+
+exports[`Form related module should return the organizer options 1`] = `
+Array [
+  Object {
+    "label": "A",
+    "value": 1,
+  },
+  Object {
+    "label": "B",
+    "value": 2,
+  },
+  Object {
+    "label": "C",
+    "value": 3,
+  },
+]
+`;
+
+exports[`Form related module should return the type options 1`] = `
+Array [
+  Object {
+    "label": "A",
+    "value": 1,
+  },
+  Object {
+    "label": "B",
+    "value": 2,
+  },
+  Object {
+    "label": "C",
+    "value": 3,
+  },
+]
+`;
