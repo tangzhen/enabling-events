@@ -11,8 +11,8 @@ import React from "react";
 import FormSectionTitle from "./FormSectionTitle";
 import FormSelection from "./FormSelection";
 import { KeyboardDateTimePicker } from "@material-ui/pickers";
-import { EnablingEvent } from "./HomeEventItem";
 import useCreateEventForm from "./hooks/useCreateEventFrom";
+import EnablingEvent from "../model/EnablingEvent";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -79,7 +79,7 @@ export default function CreateEventForm({
           fullWidth
           multiline
           rows={6}
-          value={event.brief}
+          value={event.summary}
           onChange={(event) => onValueChange("brief", event.target.value)}
         />
         <FormSelection

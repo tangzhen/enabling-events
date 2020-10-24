@@ -11,6 +11,7 @@ import Grid from "@material-ui/core/Grid";
 import { KeyboardDateTimePicker } from "@material-ui/pickers";
 import { MaterialUiPickersDate } from "@material-ui/pickers/typings/date";
 import moment from "moment";
+import EnablingEvent from "../model/EnablingEvent";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -28,7 +29,12 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function TicketForm() {
+interface TicketFormProps {
+  event: EnablingEvent;
+  onValueChange: (key: string, path: string) => void;
+}
+
+export default function TicketForm({ event, onValueChange }: TicketFormProps) {
   const classes = useStyles();
   const [ticketType, setTicketType] = useState<string>("free");
   const [salesStartDate, setSalesStartDate] = useState<MaterialUiPickersDate>(

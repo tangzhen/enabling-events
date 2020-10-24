@@ -1,14 +1,17 @@
-import React, { useState } from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import Stepper from "@material-ui/core/Stepper";
-import Typography from "@material-ui/core/Typography";
-import Step from "@material-ui/core/Step";
 import Button from "@material-ui/core/Button";
+import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
+import Stepper from "@material-ui/core/Stepper";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import _ from "lodash";
+import axios from "axios";
+import React, { useState } from "react";
 import CreateEventForm from "../components/CreateEventForm";
-import TicketForm from "../components/TicketForm";
 import PublishEventForm from "../components/PublishEventForm";
-import { EnablingEvent } from "../components/HomeEventItem";
+import TicketForm from "../components/TicketForm";
+import { HOST } from "../utils/config";
+import EnablingEvent from "../model/EnablingEvent";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -33,48 +36,46 @@ function getSteps() {
   return ["Create Event Page", "Tickets", "Publish Event"];
 }
 
+const INIT_EVENT = {
+  id: "",
+  title: "",
+  bg: "",
+  summary: "",
+  startDate: "",
+  endDate: "",
+  location: "",
+  organizer: "",
+  publishDate: "",
+  privacy: "",
+};
+
 export default function CreateEventPage() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
-  const [skipped, setSkipped] = React.useState(new Set<number>());
+  const [event, setEvent] = useState<EnablingEvent>(INIT_EVENT);
   const steps = getSteps();
 
   const isStepOptional = (step: number) => {
     return step === 1;
   };
 
-  const isStepSkipped = (step: number) => {
-    return skipped.has(step);
-  };
-
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleSkip = () => {
-    if (!isStepOptional(activeStep)) {
-      // You probably want to guard against something like this,
-      // it should never occur unless someone's actively trying to break something.
-      throw new Error("You can't skip a step that isn't optional.");
+  const handleNext = () => {
+    if (activeStep === steps.length - 1) {
+      axios.post(`${HOST}/api/events`, event).then(() => {
+        console.log("submit", event);
+      });
     }
-
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped((prevSkipped) => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
   };
 
-  const handleNext = () => {
-    let newSkipped = skipped;
-    if (isStepSkipped(activeStep)) {
-      newSkipped = new Set(newSkipped.values());
-      newSkipped.delete(activeStep);
-    }
-
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped(newSkipped);
+  const handleValueChange = (key: string, value: string) => {
+    const newEvent = { ...event };
+    _.set(newEvent, key, value);
+    setEvent(newEvent);
   };
 
   return (
@@ -88,9 +89,6 @@ export default function CreateEventPage() {
               <Typography variant="caption">Optional</Typography>
             );
           }
-          if (isStepSkipped(index)) {
-            stepProps.completed = false;
-          }
           return (
             <Step key={label} {...stepProps}>
               <StepLabel {...labelProps}>{label}</StepLabel>
@@ -98,9 +96,15 @@ export default function CreateEventPage() {
           );
         })}
       </Stepper>
-      {activeStep === 0 && <CreateEventForm />}
-      {activeStep === 1 && <TicketForm />}
-      {activeStep === 2 && <PublishEventForm event={{} as EnablingEvent} />}
+      {activeStep === 0 && (
+        <CreateEventForm event={event} onValueChange={handleValueChange} />
+      )}
+      {activeStep === 1 && (
+        <TicketForm event={event} onValueChange={handleValueChange} />
+      )}
+      {activeStep === 2 && (
+        <PublishEventForm event={event} onValueChange={handleValueChange} />
+      )}
       <div className={classes.buttonGroup}>
         <Button
           disabled={activeStep === 0}
@@ -109,16 +113,6 @@ export default function CreateEventPage() {
         >
           Back
         </Button>
-        {isStepOptional(activeStep) && (
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleSkip}
-            className={classes.button}
-          >
-            Skip
-          </Button>
-        )}
         <Button
           variant="contained"
           color="primary"

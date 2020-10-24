@@ -7,7 +7,7 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import React from "react";
-import { EnablingEvent } from "../components/HomeEventItem";
+import EnablingEvent from "../model/EnablingEvent";
 
 interface EventDetailHeaderProps {
   event: EnablingEvent;
@@ -65,12 +65,12 @@ export default function EventDetailHeader({ event }: EventDetailHeaderProps) {
               <img src={event.bg} alt={event.title} className={classes.bg} />
             </Grid>
             <Grid item xs={4} className={classes.description}>
-              <Typography>{event.date}</Typography>
+              <Typography>{event.startDate}</Typography>
               <div className={classes.organization}>
                 <Typography variant="h6" className={classes.title}>
                   {event.title}
                 </Typography>
-                <Typography>by {event.org}</Typography>
+                <Typography>by {event.organizer}</Typography>
                 <Button
                   variant="outlined"
                   color="primary"

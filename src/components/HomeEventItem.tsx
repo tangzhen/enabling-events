@@ -13,17 +13,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { ButtonBase } from "@material-ui/core";
 import { Link } from "react-router-dom";
-
-export interface EnablingEvent {
-  id: string;
-  title: string;
-  bg: string;
-  brief: string;
-  date: string;
-  org: string;
-  location: string;
-  description: string;
-}
+import EnablingEvent from "../model/EnablingEvent";
 
 interface HomeEventItemProp {
   event: EnablingEvent;
@@ -64,7 +54,7 @@ export default function HomeEventItem({ event }: HomeEventItemProp) {
             {event.title}
           </Typography>
         }
-        subheader={event.date}
+        subheader={event.startDate}
       />
       <ButtonBase
         component={Link}
@@ -78,7 +68,7 @@ export default function HomeEventItem({ event }: HomeEventItemProp) {
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            {event.brief}
+            {event.summary}
           </Typography>
         </CardContent>
       </ButtonBase>

@@ -11,8 +11,8 @@ import { KeyboardDateTimePicker } from "@material-ui/pickers";
 import { MaterialUiPickersDate } from "@material-ui/pickers/typings/date";
 import moment from "moment";
 import React, { useState } from "react";
+import EnablingEvent from "../model/EnablingEvent";
 import FormSectionTitle from "./FormSectionTitle";
-import { EnablingEvent } from "./HomeEventItem";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -33,9 +33,10 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface PublishEventFromProps {
   event: EnablingEvent;
+  onValueChange: (key: string, path: string) => void;
 }
 
-export default function PublishEventForm({ event }: PublishEventFromProps) {
+export default function PublishEventForm({ event, onValueChange }: PublishEventFromProps) {
   const classes = useStyles();
   const [privacySetting, setPrivacySetting] = useState<string>("public");
   const [publishStartDate, setPublishStartDate] = useState<
@@ -54,12 +55,12 @@ export default function PublishEventForm({ event }: PublishEventFromProps) {
             <img src={event.bg} alt={event.title} className={classes.bg} />
           </Grid>
           <Grid item xs={4}>
-            <Typography>{event.date}</Typography>
+            <Typography>{event.startDate}</Typography>
             <div>
               <Typography variant="h6">
                 {event.title}
               </Typography>
-              <Typography>by {event.org}</Typography>
+              <Typography>by {event.organizer}</Typography>
             </div>
             <Button color="primary">PREVIEW</Button>
           </Grid>

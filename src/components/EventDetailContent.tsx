@@ -3,12 +3,12 @@ import Typography from "@material-ui/core/Typography";
 import React from "react";
 import clsx from "clsx";
 import moment from "moment";
-import { EnablingEvent } from "./HomeEventItem";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import EmailIcon from "@material-ui/icons/Email";
+import EnablingEvent from "../model/EnablingEvent";
 
 interface EventDetailContentProps {
   event: EnablingEvent;
@@ -43,7 +43,7 @@ export default function EventDetailContent({ event }: EventDetailContentProps) {
         <Typography variant="h6" className={classes.about}>
           About this Event
         </Typography>
-        <Typography>{event.description}</Typography>
+        <Typography>{event.summary}</Typography>
 
         <Typography className={clsx(classes.bold, classes.sectionPadding)}>
           Share with Friends
@@ -55,7 +55,7 @@ export default function EventDetailContent({ event }: EventDetailContentProps) {
       <Grid item xs={4} className={classes.extraInfo}>
         <Typography className={classes.bold}>Date and Time</Typography>
         <Typography>
-          {moment(event.date).format("ddd, MMMM D, YYYY")}
+          {moment(event.startDate).format("ddd, MMMM D, YYYY")}
         </Typography>
         <Typography>3.00 PM - 6.00 PM</Typography>
         <Button color="primary">Add to Calendar</Button>

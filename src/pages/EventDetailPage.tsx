@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import EventDetailContent from "../components/EventDetailContent";
 import EventDetailHeader from "../components/EventDetailHeader";
-import { EnablingEvent } from "../components/HomeEventItem";
+import EnablingEvent from "../model/EnablingEvent";
 import { HOST } from "../utils/config";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({}));
