@@ -10,6 +10,7 @@ import CreateEventPage from "./pages/CreateEventPage";
 import EventDetailPage from "./pages/EventDetailPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
+import CreateEventSuccessPage from "./pages/CreateEventSuccess";
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
               </Route>
               <Route exact path="/admin/create-event">
                 <CreateEventPage />
+              </Route>
+              <Route exact path="/admin/success">
+                <CreateEventSuccessPage />
               </Route>
               <Route path="*">
                 <Redirect to="/login" />

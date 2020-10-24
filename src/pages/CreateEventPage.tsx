@@ -13,6 +13,7 @@ import TicketForm from "../components/TicketForm";
 import { HOST } from "../utils/config";
 import EnablingEvent from "../model/EnablingEvent";
 import moment from "moment";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -52,6 +53,7 @@ const INIT_EVENT = {
 
 export default function CreateEventPage() {
   const classes = useStyles();
+  const history = useHistory();
   const [activeStep, setActiveStep] = useState(0);
   const [event, setEvent] = useState<EnablingEvent>(INIT_EVENT);
   const steps = getSteps();
@@ -67,7 +69,7 @@ export default function CreateEventPage() {
   const handleNext = () => {
     if (activeStep === steps.length - 1) {
       axios.post(`${HOST}/api/events`, event).then(() => {
-        console.log("submit", event);
+        history.push({pathname: "/admin/success"});
       });
     }
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
